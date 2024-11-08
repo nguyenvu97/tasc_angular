@@ -1,11 +1,9 @@
-export interface AuthenResponse {
-    token: string;
-    user: AuthenRequest;
+export interface Response_Data<T> {
+    data: T;
     message: string
-    success: boolean
+    status_code: number
 }
-
 export interface AuthenRequest {
-    username: string,
-    password: string
+  access_token: string,
+  refresh_token: string
 }

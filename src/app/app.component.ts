@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  IsAuthen = () => this.authService.LoggedIn
+  IsAuthen = ()  => this.authService.LoggedIn;
 
   Logout = (value: any) => this.authService.Logout()
 }

@@ -9,24 +9,25 @@ import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { NavbarComponent } from './layout/navbar/navbar.component';
+
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { LoginComponent } from './layout/unauthen/login/login.component';
 import { UnauthenComponent } from './layout/unauthen/unauthen.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { JwtInterceptor } from './services/jwt/jwt.interceptor';
+import { RegisterComponent } from './layout/unauthen/register/register.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {BodyComponent} from "./layout/body/body.component";
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     SidebarComponent,
     FooterComponent,
-    DashboardComponent,
     UnauthenComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -45,12 +46,19 @@ import { JwtInterceptor } from './services/jwt/jwt.interceptor';
         },
       },
     }),
+    BodyComponent,
 
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent],
+  exports: [
+    FooterComponent,
+    SidebarComponent,
+    SidebarComponent
+  ]
 })
 export class AppModule { }

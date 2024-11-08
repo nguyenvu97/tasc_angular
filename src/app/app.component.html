@@ -1,12 +1,12 @@
-<ng-container *ngIf="IsAuthen(); else unauthen">
-  <div class="wrapper overflow-hidden">
-    <app-navbar (LogoutEvent)="Logout($event)"></app-navbar>
-    <app-sidebar></app-sidebar>
-    <router-outlet></router-outlet>
-    <app-footer></app-footer>
-  </div>
+<ng-container *ngIf="!IsAuthen(); else unauthen">
+    <div
+       class="wrapper overflow-hidden">
+        <app-sidebar></app-sidebar>
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    </div>
 </ng-container>
 
 <ng-template #unauthen>
-  <app-unauthen></app-unauthen>
+    <app-unauthen></app-unauthen>
 </ng-template>

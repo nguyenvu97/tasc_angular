@@ -1,0 +1,155 @@
+/* Đảm bảo body và html có chiều cao 100% và căn giữa */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;     /* Căn giữa theo chiều dọc */
+    background-color: #f4f6f9; /* Màu nền cho trang */
+}
+
+/* Điều chỉnh giao diện login box */
+.login-box {
+    width: 100%;              /* Chiều rộng 100% để khi trên màn hình nhỏ nó vẫn thích ứng */
+    max-width: 400px;         /* Giới hạn chiều rộng tối đa cho khung đăng nhập */
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 100px auto 30px auto;           /* Thêm margin để cách đều các phần */
+}
+
+/* Giữa logo */
+.login-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Thêm kiểu cho logo là nút có thể click */
+.login-logo a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    /*background-color: #007bff;  !* Màu nền chính của nút *!*/
+    border-radius: 30px;        /* Làm tròn các góc */
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;      /* Hủy bỏ đường gạch dưới */
+    font-size: 24px;
+}
+
+/* Tạo hiệu ứng hover cho nút */
+.login-logo a:hover {
+    background-color: #0056b3;  /* Khi hover vào nút sẽ chuyển thành màu khác */
+    transition: background-color 0.3s ease;
+}
+
+/* Phần thông điệp đăng nhập */
+.login-box-msg {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Tùy chỉnh phần form và input */
+.card-body {
+    padding: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group .form-control {
+    border-radius: 5px;
+}
+
+.input-group-append .input-group-text {
+    background-color: #f4f6f9;
+    border-radius: 5px;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* Nút xã hội */
+.social-auth-links {
+    margin-top: 20px;
+}
+
+.social-auth-links p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #777;
+}
+
+.social-auth-links .btn {
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.social-auth-links .btn-primary {
+    background-color: #3b5998; /* Facebook */
+    border-color: #3b5998;
+}
+
+.social-auth-links .btn-danger {
+    background-color: #db4437; /* Google+ */
+    border-color: #db4437;
+}
+
+/* Liên kết forgot password và đăng ký */
+.mb-1, .mb-0 {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+}
+
+/*.mb-1 a, .mb-0 a {*/
+/*    color: #007bff;*/
+/*    text-decoration: none;*/
+/*}*/
+
+.mb-1 a:hover, .mb-0 a:hover {
+    text-decoration: underline;
+}
+
+/* Giữ cho phần footer (forgot password và register) nằm dưới cùng */
+.card-footer {
+    text-align: center;
+    padding: 0;
+}
+
+/* Responsive design */
+@media (max-width: 767px) {
+    .login-box {
+        width: 90%;              /* Đảm bảo khung đăng nhập chiếm 90% màn hình nhỏ */
+        padding: 20px;
+    }
+
+    /* Cải thiện logo khi màn hình nhỏ */
+    .login-logo a {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+
+    /* Tạo hiệu ứng hover cho nút */
+    .login-logo a:hover {
+        background-color: #ff9800;
+        color: white;
+        transition: background-color 0.3s ease;
+    }
+
+    .login-box-msg {
+        font-size: 14px;
+    }
+}

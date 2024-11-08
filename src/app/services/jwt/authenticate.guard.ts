@@ -13,8 +13,9 @@ export class AuthenticateGuard {
         let isLoggedIn = this.authService.LoggedIn;
         let currentUser = this.authService.GetCredential;
         //Check if the token is expired or not and if token is expired then redirect to login page and return false
-        if (isLoggedIn && currentUser && !jwtHelperService.isTokenExpired(currentUser.token)) return true;
+        if (isLoggedIn && currentUser && !jwtHelperService.isTokenExpired(currentUser.data.access_token)) return true;
         this.authService.Logout();
         return false;
     }
+
 }
